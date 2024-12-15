@@ -1,0 +1,80 @@
+<div class="flex">
+    <div class="relative flex flex-col w-full h-full text-gray-700 bg-[#FAF9FF] shadow-md rounded-lg bg-clip-border p-4">
+        <div class="flex w-full justify-between p-4">
+            <div class="flex items-center gap-2">
+                <span class="font-hospregular">Filas: </span>
+                <select (change)="cambiarCantidadDatos($event)" class="font-hospregular bg-[#EEECFD] p-1 shadow rounded-lg focus:outline-none">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <div class="flex gap-2">
+
+                @if (barraBusqueda()) {
+                    <input (keyup)="cadenaConsulta($event)" type="text" class="font-hospregular bg-[#EEECFD] shadow-md border-2 border-[#9368b7] rounded-lg p-1 focus:outline-none" placeholder="Buscar ...">
+                }
+
+            </div>
+        </div>
+        <table class="w-full text-left table-auto min-w-max">
+            <thead>
+                <tr>
+
+                    @for (cabecera of cabeceras(); track $index) {
+                        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                            <p class="block font-hospbold text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                                {{cabecera}}
+                            </p>
+                        </th>
+                    }
+
+                    @if (botonAccion()) {
+                        <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70"></p>
+                        </th>
+                    }
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (datos() != undefined) {
+                    @for (dato of datosTabla.datosActivos; track $index) {
+                        @if ($index < datosTabla.datosPorPagina!) {
+                            <tr>
+                                <ng-container [ngTemplateOutlet]="filasTemplate()" [ngTemplateOutletContext]="{$implicit: dato}"></ng-container>
+                                
+                                @if (botonAccion()) {
+                                    <td class="p-3 border-b border-blue-gray-50">
+                                        <button (click)="eventoClick()" class="shadow px-3 py-2 bg-[#9368B7] block font-sans text-sm antialiased font-medium leading-normal text-white rounded-full">
+                                            <i class="material-symbols-outlined text-white">Visibility</i>
+                                        </button>
+                                    </td>
+                                }
+        
+                            </tr>
+                        }
+                    }
+                }
+
+            </tbody>
+        </table>
+        <div class="flex p-4 justify-center w-full gap-4">
+            <button (click)="retroceder()" class="shadow bg-[#9368B7] py-1 px-3 rounded-full text-white">
+                <i class="material-symbols-outlined">chevron_left</i>
+            </button>
+
+            @if (registrosTotales() != undefined || registrosTotales()! > 0) {
+                @for (pagina of paginas; track $index) {
+                    <button (click)="cambiarPagina(pagina)" [class.btn-pag-activo]="pagina === datosTabla.paginaActiva" class="font-hospregular bg-[#EEECFD] shadow py-1 px-3 rounded-full text-black">{{pagina}}</button>
+                }
+            }
+
+            <button (click)="avanzar()" class="shadow bg-[#9368B7] py-1 px-3 rounded-full text-white">
+                <i class="material-symbols-outlined">chevron_right</i>
+            </button>
+        </div>
+    </div>
+</div>

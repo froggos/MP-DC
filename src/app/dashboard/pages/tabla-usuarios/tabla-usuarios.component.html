@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="flex flex-col gap-3 p-8 w-full">
+    <app-usuario></app-usuario>
+
+    <app-tabla [botonAccion]="true" 
+        (emitirPagina)="obtenerPagina($event)" 
+        [datos]="usuarios" 
+        [cabeceras]="cabeceras" 
+        [registrosTotales]="cantidad"
+        [filasTemplate]="tds"
+        (emitirAccion)="abrirModal($event)">
+    </app-tabla>
+</div>
+
+<ng-template #tds let-dato>
+    <td class="p-3 border-b border-blue-gray-50"><p class="block font-hospregular text-sm antialiased font-normal leading-normal text-blue-gray-900">
+        {{dato.run}}
+    </p></td>
+    <td class="p-3 border-b border-blue-gray-50"><p class="block font-hospregular text-sm antialiased font-normal leading-normal text-blue-gray-900">
+        {{dato.nombres + ' ' + dato.apellido_paterno + ' ' + dato.apellido_materno | titlecase}} 
+    </p></td>
+    <td class="p-3 border-b border-blue-gray-50"><p class="block font-hospregular text-sm antialiased font-normal leading-normal text-blue-gray-900">
+        {{dato.correo | lowercase}}
+    </p></td>
+    <td class="p-3 border-b border-blue-gray-50"><p class="block font-hospregular text-sm antialiased font-normal leading-normal text-blue-gray-900">
+        {{dato.servicio | uppercase}}
+    </p></td>
+    <td class="p-3 border-b border-blue-gray-50"><p class="block font-hospregular text-sm antialiased font-normal leading-normal text-blue-gray-900">
+        {{dato.perfil | titlecase}}
+    </p></td>
+    <td class="p-3 border-b border-blue-gray-50"><p class="block font-hospregular text-sm antialiased font-normal leading-normal text-blue-gray-900">
+        {{dato.estado_usuario | titlecase}}
+    </p></td>
+</ng-template>

@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-tail{
+  @apply
+  focus:outline-none
+  text-white
+  bg-purple-700
+  hover:bg-purple-800
+  focus:ring-4
+  focus:ring-purple-300
+  font-medium
+  rounded-lg
+  text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900
+}
+
+.input {
+  @apply bg-gray-50
+  border
+  font-semibold
+  border-gray-300
+  text-gray-900
+  text-sm rounded-lg
+  focus:ring-blue-500
+  focus:border-blue-500
+  block
+  w-full
+  p-2.5
+  dark:bg-gray-700
+  dark:border-gray-600
+  dark:placeholder-gray-400
+  dark:text-white
+  dark:focus:ring-blue-500
+  dark:focus:border-blue-500
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../public/assets/icons/font/MaterialIcons-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Material Icons Outlined';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../public/assets/icons/font/MaterialIconsRound-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Material Icons Round';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../public/assets/icons/font/MaterialIconsOutlined-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  src: url('../public/assets/icons/font/MaterialSymbolsOutlined.ttf');
+}
+
+@font-face {
+  font-family: gobCL_Heavy;
+  src: url('../public/assets/icons/font/gobCL_Heavy.otf');
+}
+
+@font-face {
+  font-family: gobCL_Bold;
+  src: url('../public/assets/icons/font/gobCL_Bold.otf');
+}
+
+@font-face {
+  font-family: gobCL_Regular;
+  src: url('../public/assets/icons/font/gobCL_Regular.otf');
+}
+
+@font-face {
+  font-family: gobCL_Light;
+  src: url('../public/assets/icons/font/gobCL_Light.otf');
+}
+
+.material-symbols-outlined {
+  margin-top: 5px;
+  /* margin-right: 10px; */
+  font-family: 'Material Symbols Outlined';
+  font-weight: 500;
+  font-style: normal;
+  /* font-size: 1.2rem; */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-transition: opacity 0.24s ease-in-out !important;
+  -moz-transition: opacity 0.24s ease-in-out !important;
+  transition: opacity 0.24s ease-in-out !important;
+}
+
+.material-icons-round {
+  color: #ffffff;
+  margin-right: 10px;
+  font-family: 'Material Icons Round';
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons-outlined {
+  color: #fcfcfc;
+  margin-right: 10px;
+  font-family: 'Material Icons Outlined';
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 22px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons {
+  margin-right: 10px;
+  font-family: 'Material Icons';
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
